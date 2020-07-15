@@ -7,7 +7,7 @@ import { Logo, Menu } from '../styles/headerStyles';
 // Context
 import { useGlobalStateContext, useGlobalDispatchContext } from '../context/globalContext'
 
-const Header = ({ onCursor }) => {
+const Header = ({ onCursor, setToggleMenu, toggleMenu }) => {
   const { currentTheme } = useGlobalStateContext();
   const dispatch = useGlobalDispatchContext();
 
@@ -32,18 +32,18 @@ const Header = ({ onCursor }) => {
       <Container>
         <Flex spaceBetween noHeight>
           <Logo
-            onMouseEnter={() => onCursor('hovered')}
-            onMouseLeave={() => onCursor()}
+            onMouseEnter={onCursor}
+            onMouseLeave={onCursor}
           >
             <Link to="/">FURR</Link>
             <span
               onClick={toggleTheme}
-              onMouseEnter={() => onCursor('pointer')}
-              onMouseLeave={() => onCursor('hovered')}
+              onMouseEnter={onCursor}
+              onMouseLeave={onCursor}
             ></span>
             <Link to="/">W</Link>
           </Logo>
-          <Menu>
+          <Menu onClick={() => setToggleMenu(!toggleMenu)}>
             <button>
               <span></span>
               <span></span>

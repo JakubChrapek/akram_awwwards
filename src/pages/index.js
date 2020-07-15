@@ -1,5 +1,6 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from "react";
+import Layout from "../components/layout";
+import HomeContent from "../components/homePage/HomeContent";
 
 // Components
 import HomeBanner from '../components/homePage/homeBanner';
@@ -17,7 +18,11 @@ const IndexPage = props => {
     dispatch({ type: 'CURSOR_TYPE', cursorType: cursorType });
   }
 
-  return <Layout ><HomeBanner onCursor={onCursor} /></Layout>
+  return (
+    <Layout>
+      <HomeBanner onCursor={onCursor} />
+      <HomeContent />
+    </Layout>)
 }
 
 export default IndexPage

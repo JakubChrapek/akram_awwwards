@@ -64,5 +64,8 @@ export const Cursor = styled.div`
     transform: translate(-50%, -50%) scale(1.65);
     border: 2px solid ${props => props.theme.red};
   }
+  &.nav-open {
+    background: ${props => props.theme.text};
+  }
 
 `

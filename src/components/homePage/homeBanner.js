@@ -98,7 +98,13 @@ const HomeBanner = ({ onCursor }) => {
           src={require('../../assets/video/video.mp4')}
         />
       </Video>
-      <Canvas height={size.height} width={size.width} ref={canvas} onMouseEnter={() => onCursor('hovered')} onMouseLeave={onCursor} />
+      <Canvas
+        height={size.height}
+        width={size.width}
+        ref={canvas}
+        onMouseEnter={() => onCursor('hovered')}
+        onMouseLeave={onCursor}
+      />
       <BannerTitle variants={parent} initial='initial' animate='animate'>
         <HeadLine variants={child}>DIG</HeadLine>
         <HeadLine variants={child}>DEEP</HeadLine>

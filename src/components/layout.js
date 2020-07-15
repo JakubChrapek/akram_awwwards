@@ -69,12 +69,22 @@ const Layout = ({ children }) => {
     dispatch({ type: 'CURSOR_TYPE', cursorType: cursorType });
   }
 
+  const [toggleMenu, setToggleMenu] = useState(false);
+
   return (
     <ThemeProvider theme={currentTheme === 'dark' ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <Cursor />
-      <Header onCursor={onCursor} />
-      <Navigation />
+      <Cursor toggleMenu={toggleMenu} />
+      <Header
+        onCursor={onCursor}
+        toggleMenu={toggleMenu}
+        setToggleMenu={setToggleMenu}
+      />
+      <Navigation
+        toggleMenu={toggleMenu}
+        setToggleMenu={setToggleMenu}
+        onCursor={onCursor}
+      />
       <main>{children}</main>
     </ThemeProvider>
   )
